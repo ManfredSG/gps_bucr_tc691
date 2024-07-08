@@ -12,7 +12,7 @@ Para realizar el logging de usuario se propone utilizar un display de 7 segmento
 Tener una función enterPIN() maneja el ingreso del PIN. Los valores ingresados se comparan con el PIN correcto almacenado.
 El display de 7 segmentos muestra el valor del dígito actual usando la función displayDigit().
 La función de validación del PIN compara el PIN ingresado con el correcto.
-Si el PIN es correcto, el rastreo se inicia; de lo contrario, se solicita el ingreso del PIN nuevamente.
+Si el PIN es correcto, el rastreo se inicia, de lo contrario, se solicita el ingreso del PIN nuevamente.
 
 ## Botón de inicio y fin de viaje
 Si el PIN es correcto entonces se inicia con el rastreo.
