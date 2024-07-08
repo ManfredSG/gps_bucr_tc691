@@ -1,1 +1,4 @@
-# gps_bucr_tc691
+# Universidad de Costa Rica; TCU-691: Tropicalización de la tecnología.
+
+# Proyecto: 
+Prototipo bus
