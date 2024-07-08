@@ -38,3 +38,6 @@ Iniciar el armado y conexiones del Arduino, el módulo de GPS y el display de 7 
 
 #### Para realizar la conexión del modulo y el arduino se recomienda ver el siguiente video:
 https://www.youtube.com/watch?v=ViZT5w7tPqI
+
+#### Documento de Overleaf del proyecto
+https://www.overleaf.com/project/666ca35c0123c4f0aee49700
