@@ -14,6 +14,18 @@ El display de 7 segmentos muestra el valor del dígito actual usando la función
 La función de validación del PIN compara el PIN ingresado con el correcto.
 Si el PIN es correcto, el rastreo se inicia, de lo contrario, se solicita el ingreso del PIN nuevamente.
 
-## Botón de inicio y fin de viaje
+### Botón de inicio y fin de viaje:
 Si el PIN es correcto entonces se inicia con el rastreo.
 Para finalizar el rastreo se presiona el mismo botón de confirmación.
+
+### Rastrear localización:
+Para rastrear la localización se propone crear una función de "tracking" y si es true, las coordenadas GPS se envían al servidor cada X cantidad de segundos utilizando una función sendGPSData().
+
+### Enviar datos:
+Almacenar las coordenadas GPS en un arreglo o envíalas directamente a un servidor.
+Configura un servidor que reciba y almacene los datos enviados por el Arduino.
+
+#### Opciones de servidor:
+- Usar un servicio de alojamiento web
+- Configurar un servidor local
+- Servidor en la nube
