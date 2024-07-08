@@ -29,3 +29,6 @@ Configura un servidor que reciba y almacene los datos enviados por el Arduino.
 - Usar un servicio de alojamiento web
 - Configurar un servidor local
 - Servidor en la nube
+
+#### Para realizar la conexión del modulo y el arduino se recomienda ver el siguiente video:
+https://www.youtube.com/watch?v=ViZT5w7tPqI
