@@ -32,5 +32,9 @@ Configura un servidor que reciba y almacene los datos enviados por el Arduino.
 - Configurar un servidor local
 - Servidor en la nube
 
+#### Paso 2:
+
+Iniciar el armado y conexiones del Arduino, el módulo de GPS y el display de 7 segmentos, además de los botones para realizar las pruebas.
+
 #### Para realizar la conexión del modulo y el arduino se recomienda ver el siguiente video:
 https://www.youtube.com/watch?v=ViZT5w7tPqI
