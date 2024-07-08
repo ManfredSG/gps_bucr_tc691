@@ -24,8 +24,8 @@ Para finalizar el rastreo se presiona el mismo botón de confirmación.
 Para rastrear la localización se propone crear una función de "tracking" y si es true, las coordenadas GPS se envían al servidor cada X cantidad de segundos utilizando una función sendGPSData().
 
 ### Enviar datos:
-Almacenar las coordenadas GPS en un arreglo o envíalas directamente a un servidor.
-Configura un servidor que reciba y almacene los datos enviados por el Arduino.
+Almacenar las coordenadas GPS en un arreglo o enviarlas directamente a un servidor.
+Configurar un servidor que reciba y almacene los datos enviados por el Arduino.
 
 #### Opciones de servidor:
 - Usar un servicio de alojamiento web
