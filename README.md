@@ -42,5 +42,14 @@ https://www.youtube.com/watch?v=ViZT5w7tPqI
 #### Documento de Overleaf del proyecto
 https://www.overleaf.com/project/666ca35c0123c4f0aee49700
 
+
 #### Pruebas funcionales del modulo GPS
+![GPSfuncionando](https://github.com/ManfredSG/gps_bucr_tc691/assets/125845691/28fc1e2d-7ece-444d-a066-781d6907610a)
+Se adjunta una imagen en donde se observa el modulo de GPS en funcionamiento a continuacion se detallan los datos especificos del formato, estos datos son separados por las comas:
+- Hora en UTC
+- Latitud.
+- Longitud.
+- Numero de satelites.
+- Dilución horizontal de posición.
+- Altitud en metros sobre el nivel del mar.
 
