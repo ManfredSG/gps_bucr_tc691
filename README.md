@@ -54,5 +54,5 @@ Se adjunta una imagen en donde se observa el modulo de GPS en funcionamiento a c
 - Dilución horizontal de posición.
 - Altitud en metros sobre el nivel del mar.
 
-  Cabe resaltar que la antena de el modulo GPS tienen que estar directamente apuntando al cielo, ya que trabaja por medio satelital y en interiores no encuentra la posicion.
+  Cabe resaltar que la antena de el modulo GPS tiene que estar directamente apuntando al cielo, ya que trabaja por medio satelital y en interiores no encuentra la posicion.
 
