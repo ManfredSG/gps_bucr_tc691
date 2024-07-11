@@ -46,13 +46,17 @@ https://www.overleaf.com/project/666ca35c0123c4f0aee49700
 #### Pruebas funcionales del modulo GPS
 ![prueba gps](https://github.com/user-attachments/assets/e3b477a9-a8c8-43c0-bf31-6d104acc802f)
 
-Se adjunta una imagen en donde se observa el modulo de GPS en funcionamiento a continuacion se detallan los datos especificos del formato, estos datos son separados por las comas:
+Se adjunta una imagen en donde se observa el modulo de GPS en funcionamiento a continuacion se detallan los datos específicos del formato, estos datos son separados por las comas:
 - Hora en UTC
 - Latitud.
 - Longitud.
-- Numero de satelites.
+- Número de satélites.
 - Dilución horizontal de posición.
 - Altitud en metros sobre el nivel del mar.
 
-  Cabe resaltar que la antena de el modulo GPS tiene que estar directamente apuntando al cielo, ya que trabaja por medio satelital y en interiores no encuentra la posicion.
+  Cabe resaltar que la antena de el módulo GPS tiene que estar directamente apuntando al cielo, ya que trabaja por medio satelital y en interiores no encuentra la posición.
 
+### Paso 3
+- Se debe de conseguir la botonera o un teclado matricial 4x4.
+- Se debe de realizar la simulación del dispositivo conectado con el display, además de ver el consumo de los componentes, para proceder con el armado.
+- Se debe de buscar que método usar para la alimentación.
