@@ -41,3 +41,6 @@ https://www.youtube.com/watch?v=ViZT5w7tPqI
 
 #### Documento de Overleaf del proyecto
 https://www.overleaf.com/project/666ca35c0123c4f0aee49700
+
+#### Pruebas funcionales del modulo GPS
+
