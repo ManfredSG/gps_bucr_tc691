@@ -44,7 +44,8 @@ https://www.overleaf.com/project/666ca35c0123c4f0aee49700
 
 
 #### Pruebas funcionales del modulo GPS
-![GPSfuncionando](https://github.com/ManfredSG/gps_bucr_tc691/assets/125845691/28fc1e2d-7ece-444d-a066-781d6907610a)
+![prueba gps](https://github.com/user-attachments/assets/e3b477a9-a8c8-43c0-bf31-6d104acc802f)
+
 Se adjunta una imagen en donde se observa el modulo de GPS en funcionamiento a continuacion se detallan los datos especificos del formato, estos datos son separados por las comas:
 - Hora en UTC
 - Latitud.
@@ -52,4 +53,6 @@ Se adjunta una imagen en donde se observa el modulo de GPS en funcionamiento a c
 - Numero de satelites.
 - Dilución horizontal de posición.
 - Altitud en metros sobre el nivel del mar.
+
+  Cabe resaltar que la antena de el modulo GPS tienen que estar directamente apuntando al cielo, ya que trabaja por medio satelital y en interiores no encuentra la posicion.
 
