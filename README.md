@@ -64,3 +64,5 @@ Se adjunta una imagen en donde se observa el modulo de GPS en funcionamiento a c
 ### Paso 4
 - Convertir y darle significado a los datos que arroja el GPS en el Arduino.
 - Extraer los datos a un .JSON o carpeta en la computadora.
+
+Se realizó un código para enviar los datos del Arduino a Python, dado que el Arduino como tal no puede generar un archivo sin una memoria, el cual se encuentra en la carpeta de código con el nombre de ### Arduino_a_Python
