@@ -63,4 +63,4 @@ Se adjunta una imagen en donde se observa el modulo de GPS en funcionamiento a c
 
 ### Paso 4
 - Convertir los datos que arroja el GPS en el Arduino a función de nuestro horario
-- Pasar los datos a un JASON
+- Extraer los datos a un .JSON
