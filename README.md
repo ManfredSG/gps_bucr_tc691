@@ -60,3 +60,7 @@ Se adjunta una imagen en donde se observa el modulo de GPS en funcionamiento a c
 - Se debe de conseguir la botonera o un teclado matricial 4x4.
 - Se debe de realizar la simulación del dispositivo conectado con el display, además de ver el consumo de los componentes, para proceder con el armado.
 - Se debe de buscar que método usar para la alimentación.
+
+### Paso 4
+- Convertir los datos que arroja el GPS en el Arduino a función de nuestro horario
+- Pasar los datos a un JASON
