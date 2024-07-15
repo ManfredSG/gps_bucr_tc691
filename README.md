@@ -71,5 +71,5 @@ También se hizo un código en Python que extrae solo 2 datos, el $GPGGA y $GPGL
 
 ### Paso 5
 -Investigar funcionanmiento y conexión de ESP-01, para poder hacer uso de WiFi.
-
+-Se busca enviar a una dirección url.
 -Trabaja con 3.3v, tener cuidado de no conectarle 5v porque se quema.
