@@ -74,3 +74,6 @@ También se hizo un código en Python que extrae solo 2 datos, el $GPGGA y $GPGL
 - Se busca enviar a una dirección url.
 - Trabaja con 3.3v y admite máximo 3.6v, tener cuidado de no conectarle 5v porque se quema.
 - Se recomienda intensidad mayor a 200mA.
+
+### Recomendaciones
+- Para hacer uso y comprobación de ubicación en Google Maps con respecto a los datos de $GPGGA de latitud y longitud, nuestro GY-NEO6MV2 arroja un formato DMM y debemos convertirlo a formato DD que utiliza Maps.
