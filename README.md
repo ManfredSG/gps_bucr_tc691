@@ -77,5 +77,9 @@ También se hizo un código en Python que extrae solo 2 datos, el $GPGGA y $GPGL
 - Se recomienda intensidad mayor a 200mA.
 - Se adquirió un uJPM Módulo suplidor de potencia 3.3V - 5v, con el cual se logra suplir los 3.3v y 200mA requeridos por el ESP-01 y se logra hacer la conexión a WiFi.
 
+### Paso 6
+- Investigar uso de comandos AT para hacer la exportación de datos del ESP-01 a url, ya lograda la conexión a WiFi.
+
+
 ### Recomendaciones
 - Para hacer uso y comprobación de ubicación en Google Maps con respecto a los datos de $GPGGA de latitud y longitud, nuestro GY-NEO6MV2 arroja un formato DMM y debemos convertirlo a formato DD que utiliza Maps.
