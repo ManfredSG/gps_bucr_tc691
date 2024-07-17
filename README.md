@@ -70,10 +70,11 @@ Se realizó un código para enviar los datos del Arduino a Python, dado que el A
 También se hizo un código en Python que extrae solo 2 datos, el $GPGGA y $GPGLL como primer intento de hacer la extracción de la totalidad de los datos, en intervalo de cada 1 minuto, este código también se encuentra en la carpeta de código con el nombre de “#DATOS_GPS"
 
 ### Paso 5
-- Investigar funcionanmiento y conexión de ESP-01, para poder hacer uso de WiFi.
-- Se busca enviar a una dirección url.
-- Trabaja con 3.3v y admite máximo 3.6v, tener cuidado de no conectarle 5v porque se quema.
+- Investigar funcionamiento y conexión de ESP-01, para poder hacer uso de WiFi.
+- Se busca enviar los datos a una dirección url.
+- El ESP-01 trabaja con 3.3v y admite máximo 3.6v, tener cuidado de no conectarle 5v porque se quema.
 - Se recomienda intensidad mayor a 200mA.
+- Se adquirió un uJPM Módulo suplidor de potencia 3.3V - 5v, con el cual se logra suplir los 3.3v y 200mA requeridos por el ESP-01 y se logra hacer la conexión a WiFi.
 
 ### Recomendaciones
 - Para hacer uso y comprobación de ubicación en Google Maps con respecto a los datos de $GPGGA de latitud y longitud, nuestro GY-NEO6MV2 arroja un formato DMM y debemos convertirlo a formato DD que utiliza Maps.
