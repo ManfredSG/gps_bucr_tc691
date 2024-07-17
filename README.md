@@ -68,6 +68,7 @@ Se adjunta una imagen en donde se observa el modulo de GPS en funcionamiento a c
 Se realizó un código para enviar los datos del Arduino a Python, dado que el Arduino como tal no puede generar un archivo sin una memoria, el cual se encuentra en la carpeta de código con el nombre de “Arduino_a_Python"
 
 También se hizo un código en Python que extrae solo 2 datos, el $GPGGA y $GPGLL como primer intento de hacer la extracción de la totalidad de los datos, en intervalo de cada 1 minuto, este código también se encuentra en la carpeta de código con el nombre de “#DATOS_GPS"
+- La extracción de datos de Arduino a Python quedó descartada de momento, se va a realizar un envío de datos hacia una url.
 
 ### Paso 5
 - Investigar funcionamiento y conexión de ESP-01, para poder hacer uso de WiFi.
