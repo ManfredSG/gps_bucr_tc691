@@ -78,7 +78,19 @@ También se hizo un código en Python que extrae solo 2 datos, el $GPGGA y $GPGL
 - Se adquirió un uJPM Módulo suplidor de potencia 3.3V - 5v, con el cual se logra suplir los 3.3v y 200mA requeridos por el ESP-01 y se logra hacer la conexión a WiFi.
 
 ### Descripción de conexión Arduino a ESP-01
-- Pi
+| Nº | Nombre del Pin | Función |
+|----|----------------|---------|
+| 1  | GND            | GND     |
+| 2  | GPIO2          | GPIO, Pull-up Interno |
+| 3  | GPIO0          | GPIO, Pull-up Interno |
+| 4  | RXD            | UART0, pin de datos recibidos RXD |
+| 5  | VCC            | Fuente de alimentación de 3.3V (VDD) |
+| 6  | RST            | Pin de reset externo, activo bajo |
+| 7  | CH_PD          | Pin de habilitación del chip. Activo alto |
+| 8  | TXD            | UART0, pin de datos enviados TXD |
+
+*Tabla 1: Descripción de los Pines para el ESP-01*
+
 
 ### Paso 6
 - Investigar uso de comandos AT para hacer la exportación de datos del ESP-01 a url, ya lograda la conexión a WiFi.
