@@ -95,6 +95,38 @@ También se hizo un código en Python que extrae solo 2 datos, el $GPGGA y $GPGL
 ### Paso 6
 - Investigar uso de comandos AT para hacer la exportación de datos del ESP-01 a url, ya lograda la conexión a WiFi.
 
+# Comandos AT para la configuración y comunicación del módulo
+
+A continuación se describen los comandos AT utilizados por el momento para la configuración y comunicación del módulo:
+
+- `AT+CWMODE=a`: Indica el modo de funcionamiento del módulo, sustituir `a` por:
+    - 1: Station mode.
+    - 2: SoftAP mode.
+    - 3: SoftAP+Station mode.
+- `AT+CWLAP`: Muestra en el serial monitor las redes WiFi disponibles.
+- `AT+CWJAP="SSID","PASSWORD"`: Establece la conexión con una red WiFi, sustituir SSID por el nombre de la red y PASSWORD por la contraseña.
+- `AT+CIFSR`: Muestra las direcciones IP relacionadas a la conexión actual del módulo, se identifica la IP estática que corresponde al módulo (`:STAIP`).
+- `AT+CIPMUX=a`: Habilita la conexión múltiple del módulo, `a` admite valores 1 y 2.
+- `AT+CIPSERVER=a,b`: Indica el manejo del servidor, sustituir `a` y `b` por:
+    - `a=1`: para habilitar el servidor.
+    - `a=0`: para deshabilitar el servidor.
+    - `b`: por el puerto que se utiliza.
+- `AT+CIPSEND=0,b`: Indica la longitud de los datos que se enviarán al servidor, sustituir `b` por una cantidad mayor o igual al número de caracteres que se utilizan.
+- `AT+CIPCLOSE=0`: Envía el mensaje a la dirección planteada.
+
+#### Pruebas funcionales del modulo ESP-01
+
+![Prueba de envío mediante Serial Monitor: configuración](https://github.com/user-attachments/assets/e96d5079-79be-4039-9d9d-5c853f4dbe68)
+Envio1.png)
+
+![Prueba de envío mediante Serial Monitor: envío de datos](https://github.com/user-attachments/assets/db9a7898-3f8f-4760-bc70-c3b4689fba83)
+)
+
+**Nota 1:** Se debe añadir la tarjeta del módulo ESP-01 a Arduino, para ello se recomienda seguir los pasos vistos en el siguiente [link](https://programarfacil.com/podcast/como-configurar-esp01-wifi-esp8266/).
+
+**Nota 2:** Se debe deshabilitar el microcontrolador del Arduino, por lo que se conecta el pin RST a GND.
+
+**Nota 3:** Para el funcionamiento correcto se debe cambiar el ajuste de línea a "Both NL & CR" y el Baud rate a 115200.
 
 ### Recomendaciones
 - Para hacer uso y comprobación de ubicación en Google Maps con respecto a los datos de $GPGGA de latitud y longitud, nuestro GY-NEO6MV2 arroja un formato DMM y debemos convertirlo a formato DD que utiliza Maps.
