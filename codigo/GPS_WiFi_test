@@ -1,0 +1,159 @@
+#include <TinyGPS++.h> // Libreria para extraer datos del GPS
+#include <SoftwareSerial.h> 
+#include <ArduinoJson.h> // Libreria para crear y manejar archivos JSON
+
+TinyGPSPlus gpsModule;
+// Pines para el GPS y el WiFi
+SoftwareSerial GPS(4, 3); // RX, TX para GPS
+SoftwareSerial WIFI(9, 8); // RX, TX para WiFi (ajusta los pines según tu configuración)
+
+void setup() {
+  // Configuración de la comunicación serial
+  Serial.begin(9600); // Monitor serie
+  GPS.begin(9600); // GPS
+  WIFI.begin(115200); // ESP-01
+
+  Serial.println("Iniciando ESP-01...");
+  iniciarESP(); // Configuración del ESP-01
+  Serial.println("ESP-01 iniciado.");
+}
+
+void loop() {
+  while (GPS.available() > 0)
+    if (gpsModule.encode(GPS.read())) // Actualiza 'gpsModule' con la información del GPS
+      gpsData();
+
+  // Revisar si el GPS no responde
+  if (millis() > 5000 && gpsModule.charsProcessed() < 10)
+  {
+    Serial.println("Error: GPS no responde");
+    while (true);
+  }
+}
+
+// Función para inicializar el ESP-01
+void iniciarESP() {
+  Serial.println("Enviando comando AT...");
+  if (ATCommand("AT", "OK", 1000)) {
+    Serial.println("ESP-01 responde correctamente.");
+  } else {
+    Serial.println("Error: ESP-01 no responde.");
+  }
+
+  Serial.println("Configurando modo cliente...");
+  if (ATCommand("AT+CWMODE=1", "OK", 10000)) {
+    Serial.println("Modo cliente configurado.");
+  } else {
+    Serial.println("Error: No se pudo configurar el modo cliente.");
+  }
+
+  Serial.println("Conectando a la red WiFi...");
+  if (ATCommand("AT+CWJAP=\"ARCOSWIFI-INII-2G\",\"Lnrqv6ozs4FEc\"", "OK", 10000)) {
+    Serial.println("Conexión WiFi exitosa.");
+  } else {
+    Serial.println("Error: No se pudo conectar a la red WiFi.");
+  }
+
+  Serial.println("Habilitando múltiples conexiones...");
+  if (ATCommand("AT+CIPMUX=1", "OK", 10000)) {
+    Serial.println("Múltiples conexiones habilitadas.");
+  } else {
+    Serial.println("Error: No se pudo habilitar múltiples conexiones.");
+  }
+
+  Serial.println("Iniciando servidor TCP...");
+  if (ATCommand("AT+CIPSERVER=1,80", "OK", 10000)) {
+    Serial.println("Servidor TCP iniciado.");
+  } else {
+    Serial.println("Error: No se pudo iniciar el servidor TCP.");
+  }
+}
+
+void gpsData()
+{
+  StaticJsonDocument<256> JSON; // JSON de 256 bytes
+////////////LOCALIZACIÓN////////////
+  if (gpsModule.location.isValid())
+  {
+    JSON["latitud"] = gpsModule.location.lat();
+    JSON["longitud"] = gpsModule.location.lng();
+    JSON["altitud"] = gpsModule.altitude.meters();
+  }
+  else
+  {
+    JSON["localizacion"] = "No disponible";
+  }
+////////////FECHA////////////
+  if (gpsModule.date.isValid())
+  {
+    char fecha[11];
+    sprintf(fecha, "%02d/%02d/%04d", gpsModule.date.day(), gpsModule.date.month(), gpsModule.date.year());
+    JSON["fecha"] = fecha;
+  }
+  else
+  {
+    JSON["fecha"] = "No disponible";
+  }
+////////////HORA////////////
+  if (gpsModule.time.isValid())
+  {
+    char hora[13];
+    sprintf(hora, "%02d:%02d:%02d.%02d", gpsModule.time.hour() - 6, gpsModule.time.minute(), gpsModule.time.second(), gpsModule.time.centisecond());
+    JSON["hora"] = hora;
+  }
+  else
+  {
+    JSON["hora"] = "No disponible";
+  }
+/////////////////////////////////////////
+  String jsonString;
+  serializeJson(JSON, jsonString); // Serializa JSON a una cadena
+  Serial.println(jsonString); // Lo envia a Serial Monitor
+  gpsDataToServer(jsonString); // Enviar datos del GPS al servidor
+  delay(1000);
+}
+
+
+// Función para enviar datos al servidor
+void gpsDataToServer(String data) {
+  String cmd = "AT+CIPSTART=\"TCP\",\"192.168.17.192\",8000";
+  if (ATCommand(cmd, "OK", 10000)) {
+    Serial.println("Conexión TCP iniciada.");
+    cmd = "AT+CIPSEND=" + String(1); // Tamaño de los datos a enviar
+    if (ATCommand(cmd, ">", 1000)) {
+      WIFI.print(data); // Enviar dato GPS
+      WIFI.write('\r');
+      WIFI.write('\n');
+      Serial.println("Dato GPS enviado al servidor.");
+    } else {
+      Serial.println("Error: No se pudo iniciar el envío de datos.");
+    }
+  } else {
+    Serial.println("Error: No se pudo iniciar la conexión TCP.");
+  }
+}
+
+
+// Función para enviar comandos AT y esperar una respuesta
+bool ATCommand(String command, String expected_response, unsigned long timeout) {
+  WIFI.println(command);
+  unsigned long start = millis();
+  String response = "";
+  
+  while (millis() - start < timeout) {
+    while (WIFI.available()) {
+      char c = WIFI.read();
+      response += c;
+    }
+    
+    if (response.indexOf(expected_response) != -1) {
+      return true;
+    }
+  }
+  
+  Serial.print("Comando AT: ");
+  Serial.print(command);
+  Serial.print(" - Respuesta: ");
+  Serial.println(response);
+  return false;
+}
