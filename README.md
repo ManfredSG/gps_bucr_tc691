@@ -32,7 +32,7 @@ Configurar un servidor que reciba y almacene los datos enviados por el Arduino.
 - Configurar un servidor local
 - Servidor en la nube
 
-#### Paso 2:
+### Paso 2:
 
 Iniciar el armado y conexiones del Arduino, el módulo de GPS y el display de 7 segmentos, además de los botones para realizar las pruebas.
 
@@ -95,7 +95,7 @@ También se hizo un código en Python que extrae solo 2 datos, el $GPGGA y $GPGL
 ### Paso 6
 - Investigar uso de comandos AT para hacer la exportación de datos del ESP-01 a url, ya lograda la conexión a WiFi.
 
-# Comandos AT para la configuración y comunicación del módulo
+#### Comandos AT para la configuración y comunicación del módulo
 
 A continuación se describen los comandos AT utilizados por el momento para la configuración y comunicación del módulo:
 
