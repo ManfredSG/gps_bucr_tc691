@@ -117,12 +117,10 @@ A continuación se describen los comandos AT utilizados por el momento para la c
 #### Pruebas funcionales del modulo ESP-01
 
 ![Prueba de envío mediante Serial Monitor: configuración](https://github.com/user-attachments/assets/e96d5079-79be-4039-9d9d-5c853f4dbe68)
-Envio1.png)
 
 ![Prueba de envío mediante Serial Monitor: envío de datos](https://github.com/user-attachments/assets/db9a7898-3f8f-4760-bc70-c3b4689fba83)
-)
 
-**Nota 1:** Se debe añadir la tarjeta del módulo ESP-01 a Arduino, para ello se recomienda seguir los pasos vistos en el siguiente [link](https://programarfacil.com/podcast/como-configurar-esp01-wifi-esp8266/).
+**Nota 1:** Se debe añadir la tarjeta del módulo ESP-01 a Arduino, para ello se recomienda seguir los pasos vistos en el siguiente [enlace](https://programarfacil.com/podcast/como-configurar-esp01-wifi-esp8266/).
 
 **Nota 2:** Se debe deshabilitar el microcontrolador del Arduino, por lo que se conecta el pin RST a GND.
 
