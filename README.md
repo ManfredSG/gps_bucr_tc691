@@ -32,7 +32,7 @@ En cuanto a la alimentación, el monitor se alimenta a través del mismo cable d
 ### Arduino UNO
 Es una placa de desarrollo basada en el microcontrolador ATmega328P, opera a una frecuencia de 16 MHz, está equipada con 14 pines de entrada/salida digital, de los cuales 6 pueden usarse como salidas PWM (Pulse Width Modulation), además, dispone de 6 pines de entrada analógica.
 
-Para la comunicación y la conexión de periféricos, la placa incluye un puerto USB tipo B para la programación y la comunicación con el ordenador, el cual se utiliza para cargar el código desde el entorno de desarrollo Arduino IDE al microcontrolador y para la comunicación serie durante la ejecución del programa, también cuenta con un conector de alimentación externo que puede recibir voltajes de entre 7V y 12V, lo que permite alimentar la placa de manera independiente de la conexión USB, incluye un regulador de voltaje interno que proporciona una salida de $5V$ para alimentar los componentes conectados a la placa, así como una salida de $3.3V$ para dispositivos que requieren un voltaje menor.
+Para la comunicación y la conexión de periféricos, la placa incluye un puerto USB tipo B para la programación y la comunicación con el ordenador, el cual se utiliza para cargar el código desde el entorno de desarrollo Arduino IDE al microcontrolador y para la comunicación serie durante la ejecución del programa, también cuenta con un conector de alimentación externo que puede recibir voltajes de entre 7V y 12V, lo que permite alimentar la placa de manera independiente de la conexión USB, incluye un regulador de voltaje interno que proporciona una salida de 5V para alimentar los componentes conectados a la placa, así como una salida de 3.3V para dispositivos que requieren un voltaje menor.
 
 [Documentación completa](https://www.arduino.cc/reference/es/)
 
@@ -160,4 +160,5 @@ En la configuración inicial, se inicializa la comunicación serial con el módu
 La función `connectToWiFi` se define para conectar el módulo ESP8266 a la red WiFi, esta función intenta conectar a la red utilizando las credenciales proporcionadas y verifica el estado de la conexión, la función `gpsData` se encarga de extraer los datos del GPS y serializarlos en un objeto JSON, los datos incluyen la latitud, longitud, altitud, fecha y hora, la función verifica la validez de los datos extraídos antes de agregarlos al objeto JSON.
 
 La función `sendToAPI` se define para enviar los datos serializados en JSON a la API de localización, esta función construye y envía una solicitud HTTP POST, donde la URL se divide en host, puerto y ruta para construir correctamente la solicitud HTTP.
+
 
