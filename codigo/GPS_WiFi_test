@@ -5,10 +5,10 @@
 
 TinyGPSPlus gpsModule;
 SoftwareSerial GPS(4, 3); // RX, TX para GPS
-SoftwareSerial espSerial(2, 3); // RX, TX para ESP8266
+SoftwareSerial espSerial(8, 9); // RX, TX para ESP8266
 
-const char* ssid = "your_SSID";
-const char* password = "your_PASSWORD";
+const char* ssid = "ARCOSWIFI-INII-2G";
+const char* password = "Lnrqv6ozs4FEc";
 const char* api_url = "https://realtime.bucr.digital/api/position";
 
 WiFiClient client;
@@ -16,7 +16,7 @@ WiFiClient client;
 void setup() {
   Serial.begin(9600);
   GPS.begin(9600);
-  espSerial.begin(115200);
+  espSerial.begin(9600);
   
   WiFi.init(espSerial);
 
